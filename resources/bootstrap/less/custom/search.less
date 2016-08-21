@@ -1,0 +1,146 @@
+.search-in-navbar {
+	float:left;
+	padding-top:20px;
+	    .input-group {
+		    width:100%;
+		    input {
+			    height:28px;
+			    border-radius: 0;
+			    border:1px solid #be765b;
+                border-right: 0;
+                -webkit-box-shadow: none; 
+                box-shadow: inset none; 
+                background-color:#efebe2;
+                
+			    &:focus {
+			        border: 1px solid #be765b;
+                    border-right: 0;
+                        outline: 0;
+                        -webkit-box-shadow: none; 
+                        box-shadow: inset none; 
+			    }
+
+		    }
+		    .input-group-btn {
+			    .btn {
+				    height:28px;
+				    line-height: 1px;
+				    border:1px solid #be765b;
+				    border-left:0;
+                    border-bottom-right-radius: 0;
+                    border-top-right-radius: 0;
+                    background-color:#efebe2;
+                    cursor: pointer;
+                    &:focus,&:active {
+                        outline:0;
+                        border-color:#be765b;
+                        -webkit-box-shadow: none; 
+                        box-shadow: inset none; 
+                    }
+                    &:hover {
+                    	outline:0;
+                        border-color:#be765b;
+                        -webkit-box-shadow: none; 
+                        box-shadow: inset none; 
+                        cursor: pointer;
+                    }
+			    }
+		    }
+	    }
+		@media (min-width: @screen-hg-min)
+        { //1400px and up
+		        width: 660px;
+        } 	 
+		@media (min-width: @screen-lg-min) and (max-width: @screen-hg-min)
+        { //992px; and 1200px
+		        width: 510px;
+        } 	
+        @media (min-width: @screen-md-min) and (max-width: @screen-lg-min)
+        { //992px; and 1200px
+		        width: 315px;
+        }
+}
+
+.nav-search-area {
+	&:before, &:after {
+		content:" ";
+		display: table;
+		clear:both;
+	}
+	        .search {
+	            height: 28px;
+	            float:left;
+	                    	    .input-group {
+		    width:100%;
+		    input {
+			    height:28px;
+			    border-radius: 0;
+			    border:1px solid #be765b;
+                border-right: 0;
+                -webkit-box-shadow: none; 
+                box-shadow: inset none; 
+                background-color:#efebe2;
+                
+			    &:focus {
+			        border: 1px solid #be765b;
+                    border-right: 0;
+                        outline: 0;
+                        -webkit-box-shadow: none; 
+                        box-shadow: inset none; 
+			    }
+
+		    }
+		    .input-group-btn {
+			    .btn {
+				    height:28px;
+				    line-height: 1px;
+				    border:1px solid #be765b;
+				    border-left:0;
+                    border-bottom-right-radius: 0;
+                    border-top-right-radius: 0;
+                    background-color:#efebe2;
+                    cursor: pointer;
+                    &:focus,&:active {
+                        outline:0;
+                        border-color:#be765b;
+                        -webkit-box-shadow: none; 
+                        box-shadow: inset none; 
+                    }
+                    &:hover {
+                    	outline:0;
+                        border-color:#be765b;
+                        -webkit-box-shadow: none; 
+                        box-shadow: inset none; 
+                        cursor: pointer;
+                    }
+			    }
+		    }
+	    }
+/*		        @media (min-width: @screen-hg-min)
+                { //1400px and up
+		                width: 660px;
+                } 	 
+		        @media (min-width: @screen-lg-min) and (max-width: @screen-hg-min)
+                { //992px; and 1200px
+		                width: 510px;
+                } 	
+                @media (min-width: @screen-md-min) and (max-width: @screen-lg-min)
+                { //992px; and 1200px
+		                width: 315px;
+                }*/
+                @media (min-width: @screen-sm-min) and (max-width: @screen-md-min) 
+                { //992px; and 768px
+		                width: 100%;
+                }
+
+/*                @media (min-width: 539px) and (max-width: 768px) 
+                {
+		                width: 491px;
+                }
+
+                @media (min-width: 299px) and (max-width: 539px) 
+                {
+		                width: 290px;
+                }*/
+        }
+}

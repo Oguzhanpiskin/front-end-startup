@@ -1,0 +1,305 @@
+// Core variables and mixins
+@import "../variables.less";
+@import "../mixins.less";
+
+.media(@min, @max, @styles) {
+    @media (min-width: @min) and (max-width: @max) {
+            @styles();
+    }
+}
+.screenSize(@styles, @size) 
+{
+   & when (@size = 'xs')
+   {
+      .media(1px, @screen-xs, @styles)
+   }
+   & when (@size = 'sm')
+   {
+      .media(@screen-xs, @screen-sm, @styles)
+   }
+      & when (@size = 'md')
+   {
+      .media(@screen-sm, @screen-md, @styles)
+   }
+      & when (@size = 'lg')
+   {
+      .media(@screen-md, @screen-lg, @styles)
+   }
+      & when (@size = 'hg')
+   {
+      .media(@screen-lg, 5000px, @styles)
+   }
+}
+
+.padding-res-r(@n, @size, @i: 0px ) when (@i =< @n) 
+{
+  @sizestripped: ~`@{size}`;
+    .padding-@{sizestripped}-r@{i} {
+      .screenSize({padding-right: @i !important}, @size);
+    }
+    .padding-res-r(@n, @size, (@i + 1px));
+}
+
+
+.padding-res-b(@n, @size, @i: 0px ) when (@i =< @n) 
+{
+  @sizestripped: ~`@{size}`;
+    .padding-@{sizestripped}-b@{i} {
+      .screenSize({padding-bottom: @i !important}, @size);
+    }
+    .padding-res-b(@n, @size, (@i + 1px));
+}
+
+
+.padding-res-l(@n, @size, @i: 0px ) when (@i =< @n) 
+{
+  @sizestripped: ~`@{size}`;
+    .padding-@{sizestripped}-l@{i} {
+      .screenSize({padding-left: @i !important}, @size);
+    }
+    .padding-res-l(@n, @size, (@i + 1px));
+}
+
+
+.padding-res-t(@n, @size, @i: 0px ) when (@i =< @n) 
+{
+  @sizestripped: ~`@{size}`;
+    .padding-@{sizestripped}-t@{i} {
+      .screenSize({padding-top: @i !important}, @size);
+    }
+    .padding-res-t(@n, @size, (@i + 1px));
+}
+
+.padding-res(@n, @size, @i: 0px ) when (@i =< @n) 
+{
+  @sizestripped: ~`@{size}`;
+    .padding-@{sizestripped}-@{i} {
+      .screenSize({padding: @i !important}, @size);
+    }
+    .padding-res(@n, @size, (@i + 1px));
+}
+
+
+
+/*== RES MARGIN*/
+.margin-res-r(@n, @size, @i: 0px ) when (@i =< @n) 
+{
+  @sizestripped: ~`@{size}`;
+    .margin-@{sizestripped}-r@{i} {
+      .screenSize({margin-right: @i !important}, @size);
+    }
+    .margin-res-r(@n, @size, (@i + 1px));
+}
+
+
+.margin-res-b(@n, @size, @i: 0px ) when (@i =< @n) 
+{
+  @sizestripped: ~`@{size}`;
+    .margin-@{sizestripped}-b@{i} {
+      .screenSize({margin-bottom: @i !important}, @size);
+    }
+    .margin-res-b(@n, @size, (@i + 1px));
+}
+
+
+.margin-res-l(@n, @size, @i: 0px ) when (@i =< @n) 
+{
+  @sizestripped: ~`@{size}`;
+    .margin-@{sizestripped}-l@{i} {
+      .screenSize({margin-left: @i !important}, @size);
+    }
+    .margin-res-l(@n, @size, (@i + 1px));
+}
+
+
+.margin-res-t(@n, @size, @i: 0px ) when (@i =< @n) 
+{
+  @sizestripped: ~`@{size}`;
+    .margin-@{sizestripped}-t@{i} {
+      .screenSize({margin-top: @i !important}, @size);
+    }
+    .margin-res-t(@n, @size, (@i + 1px));
+}
+
+.margin-res(@n, @size, @i: 0px ) when (@i =< @n) 
+{
+  @sizestripped: ~`@{size}`;
+    .margin-@{sizestripped}-@{i} {
+      .screenSize({margin: @i !important}, @size);
+    }
+    .margin-res(@n, @size, (@i + 1px));
+}
+
+
+.padding-res-r(100, "xs");
+.padding-res-l(100, "xs");
+.padding-res-b(100, "xs");
+.padding-res-t(100, "xs");
+.padding-res(100, "xs");
+
+.padding-res-r(100, "sm");
+.padding-res-l(100, "sm");
+.padding-res-b(100, "sm");
+.padding-res-t(100, "sm");
+.padding-res(100, "sm");
+
+.padding-res-r(100, "md");
+.padding-res-l(100, "md");
+.padding-res-b(100, "md");
+.padding-res-t(100, "md");
+.padding-res(100, "md");
+
+.padding-res-r(100, "lg");
+.padding-res-l(100, "lg");
+.padding-res-b(100, "lg");
+.padding-res-t(100, "lg");
+.padding-res(100, "lg");
+
+.padding-res-r(100, "hg");
+.padding-res-l(100, "hg");
+.padding-res-b(100, "hg");
+.padding-res-t(100, "hg");
+.padding-res(100, "hg");
+
+//res margn
+.margin-res-r(100, "xs");
+.margin-res-l(100, "xs");
+.margin-res-b(100, "xs");
+.margin-res-t(100, "xs");
+.margin-res(100, "xs");
+
+.margin-res-r(100, "sm");
+.margin-res-l(100, "sm");
+.margin-res-b(100, "sm");
+.margin-res-t(100, "sm");
+.margin-res(100, "sm");
+
+.margin-res-r(100, "md");
+.margin-res-l(100, "md");
+.margin-res-b(100, "md");
+.margin-res-t(100, "md");
+.margin-res(100, "md");
+
+.margin-res-r(100, "lg");
+.margin-res-l(100, "lg");
+.margin-res-b(100, "lg");
+.margin-res-t(100, "lg");
+.margin-res(100, "lg");
+
+.margin-res-r(100, "hg");
+.margin-res-l(100, "hg");
+.margin-res-b(100, "hg");
+.margin-res-t(100, "hg");
+.margin-res(100, "hg"); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.fa-size(@n, @i: 0px) when (@i =< @n) {
+  .fa-@{i} {
+    font-size: @i !important;
+  }
+  .fa-size(@n, (@i + 1px));
+}
+
+
+
+.padding-right(@n, @i: 0px) when (@i =< @n) {
+  .padding-r@{i} {
+    padding-right: @i !important;
+  }
+  .padding-right(@n, (@i + 1px));
+}
+
+.padding-left(@n, @i: 0px) when (@i =< @n) {
+  .padding-l@{i} {
+    padding-left: @i !important;
+  }
+  .padding-left(@n, (@i + 1px));
+}
+
+.padding-top(@n, @i: 0px) when (@i =< @n) {
+  .padding-t@{i} {
+    padding-top: @i !important;
+  }
+  .padding-top(@n, (@i + 1px));
+}
+
+.padding-bottom(@n, @i: 0px) when (@i =< @n) {
+  .padding-b@{i} {
+    padding-bottom: @i !important;
+  }
+  .padding-bottom(@n, (@i + 1px));
+}
+
+.padding(@n, @i: 0px) when (@i =< @n) {
+  .padding-@{i} {
+    padding: @i !important;
+  }
+  .padding(@n, (@i + 1px));
+}
+
+
+
+
+
+.margin(@n, @i: 0px) when (@i =< @n) {
+  .margin-@{i} {
+    margin: @i !important;
+  }
+  .margin(@n, (@i + 1px));
+}
+
+
+
+.margin-right(@n, @i: 0px) when (@i =< @n) {
+  .margin-r@{i} {
+    margin-right: @i !important;
+  }
+  .margin-right(@n, (@i + 1px));
+}
+
+.margin-left(@n, @i: 0px) when (@i =< @n) {
+  .margin-l@{i} {
+    margin-left: @i !important;
+  }
+  .margin-left(@n, (@i + 1px));
+}
+
+.margin-top(@n, @i: 0px) when (@i =< @n) {
+  .margin-t@{i} {
+    margin-top: @i !important;
+  }
+  .margin-top(@n, (@i + 1px));
+}
+
+.margin-bottom(@n, @i: 0px) when (@i =< @n) {
+  .margin-b@{i} {
+    margin-bottom: @i !important;
+  }
+  .margin-bottom(@n, (@i + 1px));
+}
+.padding-right(100);
+.padding-left(100);
+.padding-top(100);
+.padding-bottom(100);
+.margin-right(100);
+.margin-left(100);
+.margin-top(100);
+.margin-bottom(100);
+
+.padding(100);
+.margin(100);
+.fa-size(100);

@@ -1,0 +1,74 @@
+.krem {
+	background-color: #EFEBE2;
+}
+
+.fatal-bg {
+    position: relative;
+    background-color:#010001;
+    background-image: url(../ui/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center 13%;
+/*    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;*/
+    overflow: hidden;
+/*    display: table;
+    height: 100%;
+    width: 100%;*/
+
+    position: fixed;
+    width: 100%;
+    height: calc(100% + 100px);
+    z-index:-999;
+    top:-100px;
+}
+
+.account-bg             {
+                @custm-color:#F2F2F2;
+                overflow:hidden;
+                transition: all .2s ease-out;
+                background-color: @custm-color; 
+                 background-image: -webkit-linear-gradient(lighten(@custm-color, 40%) 0%, lighten(@custm-color, 8%) 1px, darken(@custm-color,15%));
+                 background-image: -o-linear-gradient(lighten(@custm-color, 40%) 0%, lighten(@custm-color, 8%) 1px, darken(@custm-color, 15%));
+                 background-image: linear-gradient(lighten(@custm-color, 40%) 0%, lighten(@custm-color, 8%) 1px, darken(@custm-color, 15%)); 
+                 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2f2f2f+0,565656+100 */
+
+                 //background-image: url(../ui/bg.jpg);
+                background-repeat: no-repeat;
+                background-position: center 13%;
+                position: fixed;
+                width: 100%;
+                height: calc(100% + 100px);
+                z-index:-999;
+                top:-100px;
+            }
+
+
+ .content-body-media 
+ {
+	margin-top:300px;
+	@media (min-width: 299px) and (max-width: 768px) 
+	{
+		margin-top:50px;
+	}
+ }
+
+ 
+
+ .fake-body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: absolute;
+    top: @oz-navbar-min-height+0px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    //height: calc(100% -61px);
+    backface-visibility: hidden;
+    will-change: scroll-position;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+ }
+
+

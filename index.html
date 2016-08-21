@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html ng-app="application">
+
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+        <link rel="stylesheet" type="text/css" href="assets/css/bs-custom.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/functionz.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Oswald:300,400|Roboto+Condensed:300,400,700|Titillium+Web:200,300,400|Roboto:400,500,300" rel="stylesheet">
+
+
+    	<script src="assets/js/jquery-1.12.4.min.js"></script>
+        <script src="assets/js/jquery.slimscroll.min.js"></script>
+    	<script src="assets/js/bootstrap.min.js"></script>
+    	<script src="assets/js/slick.min.js"></script>
+        <script src="assets/js/jquery-ui.min.js"></script>
+        <script src="assets/js/angular.min.js"></script>
+        
+
+
+
+
+	<title>FATALWAR INC</title>
+</head>
+<body ng-controller="masterController">
+
+
+<nav class="navbar navbar-fatal navbar-fixed-top">
+<div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="fa fa-bars white fa-19px"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="assets/ui/logo.png"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav standart">
+            <li class="active"><a href="#" ui-sref="/">DUYURULAR <span class="sr-only">(current)</span></a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Oyun <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Fatalwar önyazı ve videosu</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Irk sistemi tanıtım</a></li>
+                        <li><a href="#">Binekler</a></li>
+                    </ul>
+            </li>
+            <li><a href="#">SİSTEMLER</a></li>
+            <li><a href="#">ETKİNLİKLER</a></li>
+            <li><a href="http://www.fatalwar.net/forum" target="_blank">forum</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right buttons">
+            <li><a href="#">HEMEN KAYIT OL</a></li>
+<!--             <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+            </li> -->
+        </ul>
+    </div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>
+
+<div class="fake-body" style="visibility: visible;" ui-view>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<script>
+$(document)
+        .one('focus.textarea', '.textzone', function(){
+            var savedValue = this.value;
+            this.value = '';
+            this.baseScrollHeight = this.scrollHeight;
+            this.value = savedValue;
+        })
+        .on('input.textarea', '.textzone', function(){
+            var minRows = this.getAttribute('data-min-rows')|0,
+                 rows;
+            this.rows = minRows;
+        //console.log(this.scrollHeight , this.baseScrollHeight);
+            rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 20);
+            this.rows = minRows + rows;
+        });
+</script>
+
+        <script src="assets/js-compiled/app-compiled.js"></script>
+        <script src="assets/js-compiled/partials.js"></script>
+</body>
+</html>
